@@ -50,7 +50,7 @@ public class Product {
 	
 	/**
 	 * 
-	 * @param qunatity
+	 * @param quantity
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
