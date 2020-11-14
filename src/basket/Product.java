@@ -117,6 +117,7 @@ public class Product {
 	public double calculateTaxes(Product product)
 	{
 		double finalTax = 0;
+		double finalTaxPrice = 0;
 
 		if(product.isImported()){
 			finalTax += 5;
@@ -125,10 +126,16 @@ public class Product {
 		if(Arrays.asList(product.NO_TAXES_PRODUCT)
 				.contains(product.type.toLowerCase())
 		){
-			return (finalTax / 100);
+			finalTax = finalTax / 100;
+			finalTaxPrice = product.price * finalTax;
+
+			return Math.round(finalTaxPrice * 20.0) / 20.0;
 		}
 
 		finalTax += 10;
-		return (finalTax / 100);
+		finalTax = finalTax / 100;
+		finalTaxPrice = product.price * finalTax;
+
+		return Math.round(finalTaxPrice * 20.0) / 20.0;
 	}
 }
