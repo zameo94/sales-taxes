@@ -1,8 +1,13 @@
 package basket;
 
+import java.util.Arrays;
+
 public class Product {
-	
+
+	final String[] NO_TAXES_PRODUCT = {"book", "food", "medical"};
+
 	String name;
+	String type;
 	double price;
 	int quantity;
 	boolean isImported;
@@ -22,6 +27,22 @@ public class Product {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 *
+	 * @param type
+	 */
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	/**
@@ -86,5 +107,28 @@ public class Product {
 	 */
 	public void setTax(double tax) {
 		this.tax = tax;
+	}
+
+	/**
+	 *
+	 * @param product
+	 * @return
+	 */
+	public double calculateTaxes(Product product)
+	{
+		double finalTax = 0;
+
+		if(product.isImported()){
+			finalTax += 5;
+		}
+
+		if(Arrays.asList(product.NO_TAXES_PRODUCT)
+				.contains(product.type.toLowerCase())
+		){
+			return (finalTax / 100);
+		}
+
+		finalTax += 10;
+		return (finalTax / 100);
 	}
 }
