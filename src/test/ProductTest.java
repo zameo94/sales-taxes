@@ -11,7 +11,6 @@ class ProductTest {
 	@Test
 	void testGetterAndSetter() {
 		Product product = this.randomProduct();
-		String[] testNoTaxesProduct = {"book", "food", "medical"};
 		
 		assertEquals("Paper", product.getName());
 		assertEquals("Office", product.getType());

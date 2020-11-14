@@ -20,4 +20,9 @@ public class CheckoutTest {
         assertEquals(1.50, product.getTax());
 
     }
+
+    @Test
+    void testCheckoutInput(){
+
+    }
 }

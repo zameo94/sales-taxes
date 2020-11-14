@@ -117,7 +117,7 @@ public class Product {
 	public double calculateTaxes(Product product)
 	{
 		double finalTax = 0;
-		double finalTaxPrice = 0;
+		double finalTaxPrice;
 
 		if(product.isImported()){
 			finalTax += 5;
