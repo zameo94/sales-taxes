@@ -35,7 +35,7 @@ public class CheckoutTest {
         System.setOut(new PrintStream(outContent));
 
 
-        Product product1 = checkout.setNewProduct("paper", "ofice", 14.99, 1, false);
+        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, false);
         Product product2 = checkout.setNewProduct("pen", "office", 4.99, 1, false);
 
         basketItems.add(product1);
