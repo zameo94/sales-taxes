@@ -9,9 +9,34 @@ public class Checkout {
     public static void main(String[] args) {
         Checkout checkout = new Checkout();
 
+        //Simulate 1th checkout
+        System.out.println("1th Checkout:");
+
         checkout.basketItems.add(checkout.setNewProduct("book", "book", 12.49, 2, false));
         checkout.basketItems.add(checkout.setNewProduct("music CD", "music", 14.99, 1, false));
         checkout.basketItems.add(checkout.setNewProduct("chocolate bar", "food", 0.85, 1, false));
+
+        checkout.printInput(checkout.basketItems);
+        checkout.printOutput(checkout.basketItems);
+
+        //Simulate 2nd checkout
+        System.out.println("\n2nd Checkout:");
+        checkout.basketItems.clear();
+
+        checkout.basketItems.add(checkout.setNewProduct("box of chocolates", "food", 10.00, 1, true));
+        checkout.basketItems.add(checkout.setNewProduct("bottle of perfume", "perfume", 47.50, 1, true));
+
+        checkout.printInput(checkout.basketItems);
+        checkout.printOutput(checkout.basketItems);
+
+        //Simulate 3rd checkout
+        System.out.println("\n3rd Checkout:");
+        checkout.basketItems.clear();
+
+        checkout.basketItems.add(checkout.setNewProduct("bottle of perfume", "perfume", 27.99, 1, true));
+        checkout.basketItems.add(checkout.setNewProduct("bottle of perfume", "perfume", 18.99, 1, false));
+        checkout.basketItems.add(checkout.setNewProduct("packet of headache pills", "medical", 9.75, 1, false));
+        checkout.basketItems.add(checkout.setNewProduct("box of chocolates", "food", 11.25, 3, true));
 
         checkout.printInput(checkout.basketItems);
         checkout.printOutput(checkout.basketItems);
@@ -48,7 +73,13 @@ public class Checkout {
 
         for(int i = 0; i < basketItems.size(); i++){
             Product item = basketItems.get(i);
-            System.out.println(item.getQuantity() + " " + item.getName() + " at " + item.getPrice());
+            String isImported = " ";
+
+            if(item.isImported()){
+                isImported = " imported ";
+            }
+
+            System.out.println(item.getQuantity() + isImported + item.getName() + " at " + item.getPrice());
         }
     }
 
@@ -68,8 +99,13 @@ public class Checkout {
             finalPrice = (((item.getPrice() * 100) + (item.getTax() * 100)) / 100) * item.getQuantity();
             salesTaxes += item.getTax();
             total += finalPrice * 100;
+            String isImported = " ";
 
-            System.out.println(item.getQuantity() + " " + item.getName() + ": " + finalPrice);
+            if(item.isImported()){
+                isImported = " imported ";
+            }
+
+            System.out.println(item.getQuantity() + isImported + item.getName() + ": " + finalPrice);
         }
 
         System.out.println("Sales Taxes: " + salesTaxes);

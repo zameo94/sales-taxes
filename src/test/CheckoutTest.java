@@ -35,7 +35,7 @@ public class CheckoutTest {
         System.setOut(new PrintStream(outContent));
 
 
-        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, false);
+        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, true);
         Product product2 = checkout.setNewProduct("pen", "office", 4.99, 1, false);
 
         basketItems.add(product1);
@@ -44,7 +44,7 @@ public class CheckoutTest {
         checkout.printInput(basketItems);
         assertEquals("\nINPUT:\n" +
                 "\n" +
-                "1 paper at 14.99\n" +
+                "1 imported paper at 14.99\n" +
                 "1 pen at 4.99\n", outContent.toString());
     }
 
@@ -55,7 +55,7 @@ public class CheckoutTest {
         System.setOut(new PrintStream(outContent));
 
 
-        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, false);
+        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, true);
         Product product2 = checkout.setNewProduct("pen", "office", 4.99, 1, false);
 
         basketItems.add(product1);
@@ -65,9 +65,9 @@ public class CheckoutTest {
 
         assertEquals("\nOUTPUT:\n" +
                 "\n" +
-                "1 paper: 16.49\n" +
+                "1 imported paper: 17.24\n" +
                 "1 pen: 5.49\n" +
-                "Sales Taxes: 2.0\n" +
-                "Total: 21.98\n", outContent.toString());
+                "Sales Taxes: 2.75\n" +
+                "Total: 22.73\n", outContent.toString());
     }
 }
