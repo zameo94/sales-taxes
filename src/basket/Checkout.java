@@ -96,9 +96,10 @@ public class Checkout {
 
         for(int i = 0; i < basketItems.size(); i++){
             Product item = basketItems.get(i);
-            finalPrice = (((item.getPrice() * 100) + (item.getTax() * 100)) / 100) * item.getQuantity();
-            salesTaxes += item.getTax();
-            total += finalPrice * 100;
+            finalPrice = (((item.getPrice() * 100) + (item.getTax() * 100)) / 100);
+            finalPrice = ((finalPrice * 100)  * item.getQuantity()) / 100;
+            salesTaxes = ((salesTaxes * 100) + ((item.getTax() * item.getQuantity()) * 100)) / 100;
+            total += (finalPrice * 100);
             String isImported = " ";
 
             if(item.isImported()){

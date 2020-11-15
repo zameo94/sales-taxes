@@ -129,13 +129,13 @@ public class Product {
 			finalTax = finalTax / 100;
 			finalTaxPrice = product.price * finalTax;
 
-			return Math.round(finalTaxPrice * 20.0) / 20.0;
+			return Math.round(finalTaxPrice * 20) / 20.0;
 		}
 
 		finalTax += 10;
 		finalTax = finalTax / 100;
 		finalTaxPrice = product.price * finalTax;
 
-		return Math.round(finalTaxPrice * 20.0) / 20.0;
+		return Math.round(finalTaxPrice * 20) / 20.0;
 	}
 }
