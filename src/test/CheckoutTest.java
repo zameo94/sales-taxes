@@ -35,8 +35,8 @@ public class CheckoutTest {
         System.setOut(new PrintStream(outContent));
 
 
-        Product product1 = checkout.setNewProduct("paper", "Office", 14.99, 1, false);
-        Product product2 = checkout.setNewProduct("pen", "Office", 4.99, 1, false);
+        Product product1 = checkout.setNewProduct("paper", "ofice", 14.99, 1, false);
+        Product product2 = checkout.setNewProduct("pen", "office", 4.99, 1, false);
 
         basketItems.add(product1);
         basketItems.add(product2);
@@ -50,6 +50,24 @@ public class CheckoutTest {
 
     @Test
     void testPrintOutput(){
+        Checkout checkout = new Checkout();
+        List<Product> basketItems = new ArrayList<Product>();
+        System.setOut(new PrintStream(outContent));
 
+
+        Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, false);
+        Product product2 = checkout.setNewProduct("pen", "office", 4.99, 1, false);
+
+        basketItems.add(product1);
+        basketItems.add(product2);
+
+        checkout.printOutput(basketItems);
+
+        assertEquals("\nOUTPUT:\n" +
+                "\n" +
+                "1 paper: 16.49\n" +
+                "1 pen: 5.49\n" +
+                "Sales Taxes: 2.0\n" +
+                "Total: 21.98\n", outContent.toString());
     }
 }

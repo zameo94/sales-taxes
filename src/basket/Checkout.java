@@ -67,12 +67,12 @@ public class Checkout {
             Product item = basketItems.get(i);
             finalPrice = (((item.getPrice() * 100) + (item.getTax() * 100)) / 100) * item.getQuantity();
             salesTaxes += item.getTax();
-            total += finalPrice;
+            total += finalPrice * 100;
 
-            System.out.println(item.getQuantity() + " " + item.getName() + " at " + finalPrice);
+            System.out.println(item.getQuantity() + " " + item.getName() + ": " + finalPrice);
         }
 
         System.out.println("Sales Taxes: " + salesTaxes);
-        System.out.println("Total: " + total);
+        System.out.println("Total: " + total / 100);
     }
 }
