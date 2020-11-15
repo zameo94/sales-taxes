@@ -14,6 +14,7 @@ public class Checkout {
         checkout.basketItems.add(checkout.setNewProduct("chocolate bar", "food", 0.85, 1, false));
 
         checkout.printInput(checkout.basketItems);
+        checkout.printOutput(checkout.basketItems);
     }
 
     /**
@@ -49,5 +50,29 @@ public class Checkout {
             Product item = basketItems.get(i);
             System.out.println(item.getQuantity() + " " + item.getName() + " at " + item.getPrice());
         }
+    }
+
+    /**
+     *
+     * @param basketItems
+     */
+    public void printOutput(List<Product> basketItems){
+        double finalPrice;
+        double salesTaxes = 0;
+        double total = 0;
+
+        System.out.println("\nOUTPUT:\n");
+
+        for(int i = 0; i < basketItems.size(); i++){
+            Product item = basketItems.get(i);
+            finalPrice = (((item.getPrice() * 100) + (item.getTax() * 100)) / 100) * item.getQuantity();
+            salesTaxes += item.getTax();
+            total += finalPrice;
+
+            System.out.println(item.getQuantity() + " " + item.getName() + " at " + finalPrice);
+        }
+
+        System.out.println("Sales Taxes: " + salesTaxes);
+        System.out.println("Total: " + total);
     }
 }

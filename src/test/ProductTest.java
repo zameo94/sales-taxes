@@ -62,5 +62,4 @@ class ProductTest {
 
 		return product;
 	}
-
 }

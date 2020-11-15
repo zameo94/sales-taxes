@@ -26,7 +26,6 @@ public class CheckoutTest {
         assertEquals(1, product.getQuantity());
         assertFalse(product.isImported());
         assertEquals(1.50, product.getTax());
-
     }
 
     @Test
@@ -47,7 +46,10 @@ public class CheckoutTest {
                 "\n" +
                 "1 paper at 14.99\n" +
                 "1 pen at 4.99\n", outContent.toString());
+    }
 
+    @Test
+    void testPrintOutput(){
 
     }
 }
