@@ -145,8 +145,12 @@ public class Product {
 	 * @return
 	 */
 	private double roundedUp5Cent(double taxPrice){
+		//Use just 2 value after the point
 		taxPrice = Math.ceil(taxPrice * 100) / 100.0;
 
-		return Math.ceil(taxPrice * 20.0) / 20.0;
+		//Around up to the nearest 0.05
+		taxPrice = Math.ceil(taxPrice * 20.0) / 20.0;
+
+		return taxPrice;
 	}
 }
