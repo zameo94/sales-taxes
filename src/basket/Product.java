@@ -128,14 +128,19 @@ public class Product {
 		){
 			finalTax = finalTax / 100;
 			finalTaxPrice = product.price * finalTax;
+            finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
 
-			return Math.round(finalTaxPrice * 20) / 20.0;
+            double out = Math.ceil(finalTaxPrice * 20.0) / 20.0;
+            return out;
 		}
 
 		finalTax += 10;
 		finalTax = finalTax / 100;
 		finalTaxPrice = product.price * finalTax;
 
-		return Math.round(finalTaxPrice * 20) / 20.0;
+		finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
+
+		double out = Math.ceil(finalTaxPrice * 20) / 20.0;
+		return out;
 	}
 }
