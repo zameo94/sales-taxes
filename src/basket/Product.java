@@ -109,11 +109,11 @@ public class Product {
 		this.tax = tax;
 	}
 
-	/**
-	 *
-	 * @param product
-	 * @return
-	 */
+    /**
+     *
+     * @param product
+     * @return
+     */
 	public double calculateTaxes(Product product)
 	{
 		double finalTax = 0;
@@ -130,8 +130,7 @@ public class Product {
 			finalTaxPrice = product.price * finalTax;
             finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
 
-            double out = Math.ceil(finalTaxPrice * 20.0) / 20.0;
-            return out;
+            return Math.ceil(finalTaxPrice * 20.0) / 20.0;
 		}
 
 		finalTax += 10;
@@ -140,7 +139,6 @@ public class Product {
 
 		finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
 
-		double out = Math.ceil(finalTaxPrice * 20) / 20.0;
-		return out;
+		return Math.ceil(finalTaxPrice * 20) / 20.0;
 	}
 }
