@@ -28,7 +28,29 @@ Total: 42.32
 
 ## Installation
 
-Tested on Ubuntu 20.04
+* Tested on Ubuntu 20.04
+* Openjdk 11.0.9
 
+For execute this software you must install the JDK
+
+```
+sudo apt update
+sudo apt install default-jdk
+```
+
+Now you can try
+```
+java -version
+```
+
+for see if the install of JDK was successful.
+
+For example, my output is:
+
+```
+openjdk 11.0.9 2020-10-20
+OpenJDK Runtime Environment (build 11.0.9+11-Ubuntu-0ubuntu1.20.04)
+OpenJDK 64-Bit Server VM (build 11.0.9+11-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)
+```
 
 Enjoy :-)
