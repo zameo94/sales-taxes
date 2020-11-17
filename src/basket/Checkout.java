@@ -88,7 +88,7 @@ public class Checkout {
      * @param basketItems
      */
     public void printOutput(List<Product> basketItems){
-        double finalPrice;
+        double finalItemPrice;
         double salesTaxes = 0;
         double total = 0;
 
@@ -96,16 +96,17 @@ public class Checkout {
 
         for(int i = 0; i < basketItems.size(); i++){
             Product item = basketItems.get(i);
-            finalPrice = ( (((item.getPrice() * 100) + (item.getTax() * 100)) * item.getQuantity()) / 100);
-            salesTaxes = ((salesTaxes * 100) + ((item.getTax() * item.getQuantity()) * 100)) / 100;
-            total += (finalPrice * 100);
             String isImported = " ";
+
+            finalItemPrice = ((item.getPrice() * 100 + item.getTax() * 100) * item.getQuantity()) / 100;
+            salesTaxes = ((salesTaxes * 100) + ((item.getTax() * item.getQuantity()) * 100)) / 100;
+            total += (finalItemPrice * 100);
 
             if(item.isImported()){
                 isImported = " imported ";
             }
 
-            System.out.println(item.getQuantity() + isImported + item.getName() + ": " + finalPrice);
+            System.out.println(item.getQuantity() + isImported + item.getName() + ": " + finalItemPrice);
         }
 
         System.out.println("Sales Taxes: " + salesTaxes);

@@ -109,11 +109,11 @@ public class Product {
 		this.tax = tax;
 	}
 
-    /**
-     *
-     * @param product
-     * @return
-     */
+	/**
+	 *
+	 * @param product
+	 * @return
+	 */
 	public double calculateTaxes(Product product)
 	{
 		double finalTax = 0;
@@ -128,17 +128,29 @@ public class Product {
 		){
 			finalTax = finalTax / 100;
 			finalTaxPrice = product.price * finalTax;
-            finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
 
-            return Math.ceil(finalTaxPrice * 20.0) / 20.0;
+            return product.roundedUp5Cent(finalTaxPrice);
 		}
 
 		finalTax += 10;
 		finalTax = finalTax / 100;
 		finalTaxPrice = product.price * finalTax;
 
-		finalTaxPrice = Math.ceil(finalTaxPrice * 100) / 100.0;
+		return product.roundedUp5Cent(finalTaxPrice);
+	}
 
-		return Math.ceil(finalTaxPrice * 20) / 20.0;
+	/**
+	 *
+	 * @param taxPrice
+	 * @return
+	 */
+	private double roundedUp5Cent(double taxPrice){
+		//Use just 2 value after the point
+		taxPrice = Math.ceil(taxPrice * 100) / 100;
+
+		//Around up to the nearest 0.05
+		taxPrice = Math.ceil(taxPrice * 20) / 20;
+
+		return taxPrice;
 	}
 }
