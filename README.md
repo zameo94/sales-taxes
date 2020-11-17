@@ -32,7 +32,8 @@ Total: 42.32
 * [Linux Ubuntu](#ubuntu)
 * [Windows 10](#windows-10)
 
-#### Linux Ubuntu<a name="ubuntu"></a>
+<a name="ubuntu"></a>
+#### Linux Ubuntu
 
 * Tested on Ubuntu 20.04
 * Openjdk 11.0.9
@@ -89,7 +90,8 @@ java basket.Checkout
 
 for execute the software
 
-#### Windows 10<a name="windows-10"></a>
+<a name="windows-10"></a>
+#### Windows 10
 
 * Tested on Windows 10
 * Openjdk  11.0.2 (build 11.0.2+9)
