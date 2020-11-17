@@ -100,7 +100,7 @@ For execute this software you must install the JDK
 
 Go to the link http://jdk.java.net/archive/ and download the zip 11.0.2 (build 11.0.2+9) for Windows
 
-Make new directory like "C:\openJDK", copy the openJDK.zip just downloaded and extract
+Make new directory like "C:\openJDK", copy the openJDK.zip just downloaded and extract it in a directory just created
 
 Go in Control PanelSystem -> Advanced System Settings
 
@@ -114,12 +114,20 @@ Value: C:\openJDK\jdk-11.0.2\bin\
 ```
 
 Update Path variable and add 
+
 ```
 %JAVA_HOME%; 
 ```
-at the bottom of line
 
-Open another terminal and type java -version for see if the install of openJDK was successful.
+at the bottom of line.
+
+In a new window of the Terminal type 
+
+```
+java -version 
+```
+
+for see if the install of openJDK was successful.
                                              
 For example, my output is:
 
@@ -150,7 +158,7 @@ for execute the software.
 
 ---
 
-In this software are present some test with jUnit for the 2 classes Product and Checkout.
+In this software there are some test with jUnit for the 2 classes Product and Checkout.
 
 You can run these test using an IDE (I use IntelliJ)
 
