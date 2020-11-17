@@ -28,6 +28,10 @@ Total: 42.32
 
 ## Installation and Configuration
 
+
+* [Linux Ubuntu](#Linux Ubuntu)
+* [Windows 10](#Windows 10)
+
 #### Linux Ubuntu
 
 * Tested on Ubuntu 20.04
