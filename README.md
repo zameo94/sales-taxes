@@ -146,6 +146,12 @@ for compiling the java classes and finally
 java basket.Checkout 
 ```
 
-for execute the software
+for execute the software.
+
+---
+
+In this software are present some test with jUnit for the 2 classes Product and Checkout.
+
+You can run these test using an IDE (I use IntelliJ)
 
 Enjoy :-)
