@@ -100,7 +100,8 @@ For execute this software you must install the JDK
 
 Go to the link http://jdk.java.net/archive/ and download the zip 11.0.2 (build 11.0.2+9) for Windows
 
-Make new directory like "C:\openJDK", copy the openJDK.zip just downloaded and extract it in a directory just created
+Make a new folder like "C:\openJDK", copy the openjdk-11.0.2_windows-x64_bin.zip just downloaded
+in the folder you just created, extract it as "jdk-11.0.2"
 
 Go in Control PanelSystem -> Advanced System Settings
 
