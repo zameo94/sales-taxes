@@ -29,10 +29,10 @@ Total: 42.32
 ## Installation and Configuration
 
 
-* [Linux Ubuntu](#Linux Ubuntu)
-* [Windows 10](#Windows 10)
+* [Linux Ubuntu](#ubuntu)
+* [Windows 10](#windows-10)
 
-#### Linux Ubuntu
+#### Linux Ubuntu<a name="ubuntu"></a>
 
 * Tested on Ubuntu 20.04
 * Openjdk 11.0.9
@@ -89,7 +89,7 @@ java basket.Checkout
 
 for execute the software
 
-#### Windows 10
+#### Windows 10<a name="windows-10"></a>
 
 * Tested on Windows 10
 * Openjdk  11.0.2 (build 11.0.2+9)
