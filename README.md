@@ -26,12 +26,16 @@ Sales Taxes: 1.5
 Total: 42.32
 ```
 
-## Installation
+## Installation and Configuration
 
 * Tested on Ubuntu 20.04
 * Openjdk 11.0.9
 
 For execute this software you must install the JDK
+
+#### Linux Ubuntu
+
+
 
 ```
 sudo apt update
@@ -39,6 +43,7 @@ sudo apt install default-jdk
 ```
 
 Now you can try
+
 ```
 java -version
 ```
@@ -52,5 +57,23 @@ openjdk 11.0.9 2020-10-20
 OpenJDK Runtime Environment (build 11.0.9+11-Ubuntu-0ubuntu1.20.04)
 OpenJDK 64-Bit Server VM (build 11.0.9+11-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)
 ```
+
+
+
+
+Once installed JDK, always in the Terminal, positioned in the directory
+ project_root/src (sales-taxes/src) and type
+
+```
+javac -classpath . basket/Checkout.java
+ ```
+
+for compiling the java classes and finally
+
+```
+java basket.Checkout 
+```
+
+for execute the software
 
 Enjoy :-)
