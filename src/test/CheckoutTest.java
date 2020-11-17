@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CheckoutTest {
 
-    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     @Test
     void testSetNewProduct(){
@@ -32,7 +32,7 @@ public class CheckoutTest {
     void testPrintInput(){
         Checkout checkout = new Checkout();
         List<Product> basketItems = new ArrayList<Product>();
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outputStream));
 
 
         Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, true);
@@ -45,14 +45,14 @@ public class CheckoutTest {
         assertEquals("\nINPUT:\n" +
                 "\n" +
                 "1 imported paper at 14.99\n" +
-                "1 pen at 4.99\n", outContent.toString());
+                "1 pen at 4.99\n", outputStream.toString());
     }
 
     @Test
     void testPrintOutput(){
         Checkout checkout = new Checkout();
         List<Product> basketItems = new ArrayList<Product>();
-        System.setOut(new PrintStream(outContent));
+        System.setOut(new PrintStream(outputStream));
 
 
         Product product1 = checkout.setNewProduct("paper", "office", 14.99, 1, true);
@@ -68,6 +68,6 @@ public class CheckoutTest {
                 "1 imported paper: 17.24\n" +
                 "1 pen: 5.49\n" +
                 "Sales Taxes: 2.75\n" +
-                "Total: 22.73\n", outContent.toString());
+                "Total: 22.73\n", outputStream.toString());
     }
 }
