@@ -60,7 +60,7 @@ Now you can try
 java -version
 ```
 
-for see if the install of openJDK was successful.
+for see if install of openJDK was successful.
 
 For example, my output is:
 
